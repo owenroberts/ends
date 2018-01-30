@@ -14,7 +14,7 @@
 				<a class="next" href="{{page.next.url | prepend:site.baseurl }}">> next: {{ page.next.title }}</a>
 			{% endif %}
 			{% if page.previous.url %}
-				<a class="prev" href="{{page.previous.url | prepend:site.baseurl }}">< previous: {{ page.previous.title }}</a>
+				<a class="prev" href="{{page.previous.url | prepend:site.baseurl }}">< previous: {{ page.previous.title }} \ Part {{ page.previous.part }}</a>
 			{% endif %}
 				<!-- <a href="{{site.url}}/storylines.html">story lines</a> -->
 			<a href="{{ site.url }}{{ site.baseurl }}/">home</a>
