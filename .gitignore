@@ -5,3 +5,5 @@ stories/
 gf/
 birds/
 social/
+!assets/birds/
+!_posts/birds/
