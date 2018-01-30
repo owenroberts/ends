@@ -11,7 +11,7 @@
 		</div>
 		<div id="menu">
 			{% if page.next.url %}
-				<a class="next" href="{{page.next.url | prepend:site.baseurl }}">> next: {{ page.next.title }}</a>
+				<a class="next" href="{{page.next.url | prepend:site.baseurl }}">> next: {{ page.next.title }} \ Part {{ page.previous.part }}</a>
 			{% endif %}
 			{% if page.previous.url %}
 				<a class="prev" href="{{page.previous.url | prepend:site.baseurl }}">< previous: {{ page.previous.title }} \ Part {{ page.previous.part }}</a>
