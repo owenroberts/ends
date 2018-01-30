@@ -1,0 +1,15 @@
+---
+layout: main
+title: Home
+---
+
+{% for post in site.posts limit:1 %}
+	<p>Latest drawing: <a href="{{site.posts.first.url}}">{{site.posts.first.title}}</a></p>
+	{{ content }}
+<div id="menu">
+	{% if post.previous.url %}
+	<a href="{{post.previous.url}}">previous drawing</a>
+	{% endif %}
+	<!-- <a href="{{site.url}}/storylines.html">story lines</a> -->
+</div>
+{% endfor %}

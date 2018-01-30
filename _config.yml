@@ -1,0 +1,8 @@
+description: every day ends site
+exclude:
+  - hotdogs/
+  - doc/
+  - stories/
+  - gf/
+  - birds/
+  - social/
