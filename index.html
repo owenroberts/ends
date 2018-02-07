@@ -1,14 +1,20 @@
 ---
 layout: main
-title: Home
+title: home
 ---
 {% for post in site.posts limit:1 %}
-	<p>Latest drawing: <a href="{{ site.posts.first.url | prepend:site.baseurl }}">{{site.posts.first.title}}</a> \ Part {{ site.posts.first.part }}</p>
+	<p>latest drawing: <a href="{{ site.posts.first.url | prepend:site.baseurl }}">{{site.posts.first.title}}</a> \ part {{ site.posts.first.part }}</p>
 	{{ content }}
 <div id="menu">
 	{% if post.previous.url %}
 	<a href="{{ post.previous.url | prepend:site.baseurl }}">previous drawing</a>
 	{% endif %}
+	{% for cat in site.categories[post.categories.first] %}
+		{% if cat.part == 1 %}
+    		<a href="{{ cat.url | prepend:site.baseurl }}">beginning</a>
+		{% endif %}
+  	{% endfor %}
 	<!-- <a href="{{site.url}}/storylines.html">story lines</a> -->
 </div>
+
 {% endfor %}
