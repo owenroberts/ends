@@ -1,26 +1,31 @@
-<!-- post  -->
 {% include head.html %}
 <body>
 	<div id="container">
 		{% include header.html %}
 		<div id="title">
-			<p>{{ page.title }} \ part {{ page.part }} \ <span class="date">{{ page.date | date: "%B %e, %Y" }}</span></p>
+			<p>{{ page.title }} . part {{ page.part }} 
+			. {{ page.date | date: "%B %e, %Y" }}</p>
+			<p>
+			{% if page.previous.url %}
+				<a class="prev" href="{{page.previous.url | prepend:site.baseurl }}">previous</a> . 
+			{% endif %}
+			{% if page.next.url %}
+				<a class="next" href="{{page.next.url | prepend:site.baseurl }}">next</a>
+			{% endif %}
+				<!-- <a href="{{site.url}}/storylines.html">story lines</a> -->
+			. <a href="{{ site.url }}{{ site.baseurl }}/">home</a>
+			</p>
+			
 		</div>
 		<div id="content">
 			{{ content }}
 		</div>
-		<div id="menu">
-			{% if page.previous.url %}
-				<a class="prev" href="{{page.previous.url | prepend:site.baseurl }}">< {{ page.previous.title }}: part {{ page.previous.part }}</a>
-			{% endif %}
-			{% if page.next.url %}
-				<a class="next" href="{{page.next.url | prepend:site.baseurl }}">> {{ page.next.title }}: part {{ page.next.part }}</a>
-			{% endif %}
-				<!-- <a href="{{site.url}}/storylines.html">story lines</a> -->
-			<a href="{{ site.url }}{{ site.baseurl }}/">home</a>
-		</div>
+			
 	</div>
+	
 
+	<!-- {% include footer.html %} -->
 	{% include scripts.html %}
 </body>
 </html>
+<!-- post  -->

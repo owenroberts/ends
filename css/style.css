@@ -14,4 +14,9 @@ body {
 
 a, a:visited {
 	color: lightblue;
+	transition: color 3000ms;
+}
+
+a:hover {
+	color: aqua;
 }
