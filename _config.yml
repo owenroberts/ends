@@ -1,5 +1,5 @@
 description: every day ends site
-baseurl: /ends
+baseurl: /
 exclude:
   - hotdogs/
   - doc/
