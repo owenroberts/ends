@@ -2,18 +2,20 @@
 layout: main
 title: home
 ---
+
 {% for post in site.posts limit:1 %}
-	<p>latest drawing: <a href="{{ site.posts.first.url | prepend:site.baseurl }}">{{site.posts.first.title}} part {{ site.posts.first.part }}</a>
+	<p>latest drawing: <a href="{{ site.url }}{{ site.posts.first.url }}">{{site.posts.first.title}} part {{ site.posts.first.part }}</a>
 	{% if post.previous.url %}
-		. <a href="{{ post.previous.url | prepend:site.baseurl }}">previous drawing</a>
+		. <a href="{{ site.url }}{{ post.previous.url }}">previous drawing</a>
 	{% endif %}
 	{% for cat in site.categories[post.categories.first] %}
 		{% if cat.part == 1 %}
-    		. <a href="{{ cat.url | prepend:site.baseurl }}">beginning</a>
+    		. <a href="{{ site.url }}{{ cat.url }}">beginning</a>
 		{% endif %}
   	{% endfor %}
   	</p>
 	<!-- <a href="{{site.url}}/storylines.html">story lines</a> -->
+
 	<br>
 	{{ content }}
 
