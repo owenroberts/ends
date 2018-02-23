@@ -10,10 +10,10 @@
 			</p>
 			<p>
 			{% if page.previous.url %}
-				<a class="prev" href="{{page.previous.url | prepend:site.baseurl }}">previous</a> 
+				<a class="prev" href="{{page.previous.url  }}">previous</a> 
 			{% endif %}
 			{% if page.next.url %}
-				. <a class="next" href="{{page.next.url | prepend:site.baseurl }}">next</a>
+				. <a class="next" href="{{page.next.url }}">next</a>
 			{% endif %}
 				<!-- <a href="{{site.url}}/storylines.html">story lines</a> -->
 				. <a href="{{ site.url }}{{ site.baseurl }}/">home</a>
