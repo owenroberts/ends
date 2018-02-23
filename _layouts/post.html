@@ -15,8 +15,14 @@
 			{% if page.next.url %}
 				. <a class="next" href="{{page.next.url }}">next</a>
 			{% endif %}
+				{% for cat in site.categories[page.categories.first] %}
+					{% if cat.part == 1 %}
+						. <a href="{{ site.url }}{{ cat.url }}">beginning</a>
+					{% endif %}
+				{% endfor %}
 				<!-- <a href="{{site.url}}/storylines.html">story lines</a> -->
-				. <a href="{{ site.url }}{{ site.baseurl }}/">home</a>
+				. <a href="{{ site.url }}{{ site.baseurl }}">home</a>
+
 			</p>
 			
 		</div>
