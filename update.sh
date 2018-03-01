@@ -8,7 +8,7 @@ DATE=`date +%Y-%m-%d`
 # move json anim file from downloads to current project folder d
 mv ~/Downloads/$PART.json assets/$CAT/$PART.json
 
-# make html file
+echo "making html file"
 HTML="_posts/$CAT/$DATE-$CAT-$PART.html"
 touch $HTML 
 
@@ -40,10 +40,10 @@ else
     exit
 fi
 
-# make gif
+echo "making gif"
 convert -delay 10 -loop 0 ~/Downloads/$PART*.png social/$CAT/$CAT-$DATE.gif
 
-#make mp4
+echo "making mp4"
 ffmpeg -ignore_loop 0 -i social/$CAT/$CAT-$DATE.gif -c:v libx264 -pix_fmt yuv420p -crf 4 -b:v 300K -vf scale=640:-1 -t 4 -movflags +faststart social/$CAT/$CAT-$DATE.mp4
 
 # post on twitter (?)
