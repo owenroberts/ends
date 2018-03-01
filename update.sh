@@ -41,10 +41,10 @@ else
 fi
 
 # make gif
-# convert -delay 10 -loop 0 ~/Downloads/$PART*.png social/$CAT/$CAT-$DATE.gif
+convert -delay 10 -loop 0 ~/Downloads/$PART*.png social/$CAT/$CAT-$DATE.gif
 
 #make mp4
-# ffmpeg -ignore_loop 0 -i social/$CAT/$CAT-$DATE.gif -c:v libx264 -pix_fmt yuv420p -crf 4 -b:v 300K -vf scale=640:-1 -t 4 -movflags +faststart social/$CAT/$CAT-$DATE.mp4
+ffmpeg -ignore_loop 0 -i social/$CAT/$CAT-$DATE.gif -c:v libx264 -pix_fmt yuv420p -crf 4 -b:v 300K -vf scale=640:-1 -t 4 -movflags +faststart social/$CAT/$CAT-$DATE.mp4
 
 # post on twitter (?)
 
