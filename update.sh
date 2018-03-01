@@ -34,7 +34,7 @@ read PUBLISH
 
 if [ "$PUBLISH" = "y" ] ; then
    	git add .
-   	git commit -m "updates $CAT part $PART"
+   	git commit -m "updates $TITLE part $PART"
    	git push origin master
 else
     exit
