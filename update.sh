@@ -1,8 +1,12 @@
 #!/bin/bash
 
-CAT=$1
-PART=$2
-TITLE=$3
+echo "Category:"
+read CAT
+echo "Part:"
+read PART
+echo "Title":
+read TITLE
+
 DATE=`date +%Y-%m-%d`
 
 # move json anim file from downloads to current project folder d
@@ -46,6 +50,10 @@ convert -delay 10 -loop 0 ~/Downloads/$PART*.png social/$CAT/$CAT-$DATE.gif
 echo "making mp4"
 ffmpeg -ignore_loop 0 -i social/$CAT/$CAT-$DATE.gif -c:v libx264 -pix_fmt yuv420p -crf 4 -b:v 300K -vf scale=640:-1 -t 4 -movflags +faststart social/$CAT/$CAT-$DATE.mp4
 
-# post on twitter (?)
+echo "posting on twitter" # uses tweet.sh
+echo "tweet text:"
+read TWEET
+GIF=$(./tweet.sh upload social/$CAT/$CAT-$DATE.gif | jq -r .media_id_string)
+./tweet.sh tw -m $GIF $TWEET http://lines.owen.cool/$CAT/`date +%Y`/`date +%m`/`date +%d`/$CAT-$PART.html
 
 # post on insta (?)
