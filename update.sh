@@ -67,3 +67,8 @@ GIF=$(./tweet.sh upload social/$CAT/$CAT-$DATE.gif | jq -r .media_id_string)
 # remove downloads ? 
 
 # post on insta (?)
+# https://www.npmjs.com/package/ig-upload
+ig-upload login
+echo "ig text:"
+read IG
+ig-upload social/$CAT/$CAT-$DATE.mp4 $IG
