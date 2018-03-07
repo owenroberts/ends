@@ -56,6 +56,9 @@ convert -delay 10 -loop 0 ~/Downloads/$PART-*.png social/$CAT/$CAT-$DATE.gif
 echo "making mp4"
 echo "mp4 width:"
 read WIDTH
+# try square video ... 
+# ffmpeg -i social/fart/fart-2018-03-06.mp4 -filter:v "crop=512:512:128:0" -c:a copy social/fart/fart-2018-03-06_half.mp4
+
 ffmpeg -ignore_loop 0 -i social/$CAT/$CAT-$DATE.gif -c:v libx264 -pix_fmt yuv420p -crf 4 -b:v 300K -vf scale=$WIDTH:-1 -t 4 -movflags +faststart social/$CAT/$CAT-$DATE.mp4
 
 echo "posting on twitter" # uses tweet.sh
