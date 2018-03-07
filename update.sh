@@ -9,6 +9,10 @@ read TITLE
 
 DATE=`date +%Y-%m-%d`
 
+# make directories if not existing
+mkdir -p assets/$CAT
+mkdir -p _posts/$CAT
+
 # move json anim file from downloads to current project folder d
 mv ~/Downloads/$PART.json assets/$CAT/$PART.json
 
@@ -55,5 +59,7 @@ echo "tweet text:"
 read TWEET
 GIF=$(./tweet.sh upload social/$CAT/$CAT-$DATE.gif | jq -r .media_id_string)
 ./tweet.sh tw -m $GIF $TWEET http://lines.owen.cool/$CAT/`date +%Y`/`date +%m`/`date +%d`/$CAT-$PART.html
+
+# remove downloads ? 
 
 # post on insta (?)
