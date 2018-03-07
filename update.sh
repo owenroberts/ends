@@ -12,6 +12,7 @@ DATE=`date +%Y-%m-%d`
 # make directories if not existing
 mkdir -p assets/$CAT
 mkdir -p _posts/$CAT
+mkdir -p social/$CAT
 
 # move json anim file from downloads to current project folder d
 mv ~/Downloads/$PART.json assets/$CAT/$PART.json
