@@ -20,3 +20,19 @@ a, a:visited {
 a:hover {
 	color: aqua;
 }
+
+p#caption {
+	font-family: Times New Roman, serif;
+	font-size: 2em;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+#content.storylines {
+	width: 100%;
+	max-width: 640px;
+	margin: 0 auto;
+	column-count: 2;
+	text-align: left;
+}

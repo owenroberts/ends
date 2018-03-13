@@ -1,0 +1,36 @@
+---
+layout: main
+title: Story Lines
+class: storylines
+---
+
+<p>story lines</p>
+
+{% assign categories = site.categories | sort %}
+
+{% for category in categories %}
+	<a name="{{ category[0] }}"></a>
+	{% assign cat =  category[0] | replace:'-', ' ' %}
+	{% if cat == "fart" %}
+		<p>fart comics</p>
+	{% elsif cat == "futurepenis" %}
+		<p>the future penis</p>
+	{% elsif cat == "twobirds" %}
+		<p>two birds</p>
+	{% elsif cat == "birds" %}
+		<p>bird breakfast</p>
+	{% else %}
+		<p>{{ cat }}</p>
+	{% endif %}
+
+	{% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+	{% for post in sorted_posts %}
+		{%if post.categories contains category[0]%}
+		<div>
+			<span class="title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }} part {{ post.part }}</a></span>
+			<span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
+		</div>
+		{%endif%}
+	{% endfor %}
+
+{% endfor %}
