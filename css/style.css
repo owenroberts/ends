@@ -3,7 +3,9 @@ body {
 	color: white;
 	text-align: center;
 	font-family: monaco;
-	font-size: 12px
+	font-size: 12px;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
 }
 
 #ends {
@@ -27,6 +29,7 @@ p#caption {
 	width: 100%;
 	max-width: 800px;
 	margin: 0 auto;
+
 }
 
 #content.storylines {
