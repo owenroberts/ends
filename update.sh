@@ -42,7 +42,8 @@ echo "Publish? y/n"
 read PUBLISH
 
 if [ "$PUBLISH" = "y" ] ; then
-   	git add .
+   	git add _posts/*
+   	git add assets/*
    	git commit -m "updates $TITLE part $PART"
    	git push origin master
 else
