@@ -17,10 +17,13 @@ mkdir -p social/$CAT
 # move json anim file from downloads to current project folder d
 mv ~/Downloads/$PART.json assets/$CAT/$PART.json
 
-echo "making html file"
 HTML="_posts/$CAT/$DATE-$CAT-$PART.html"
-touch $HTML 
 
+if [ -f $HTML ]; then
+	echo "$HTML found"
+else
+echo "making html file"
+touch $HTML 
 cat > $HTML << EOF
 ---
 layout: post
@@ -35,7 +38,8 @@ categories: $CAT
 ></canvas>
 {% include post_script.html %}
 EOF
-
+fi
+# 
 # publish to lines.owen.cool
 open http://localhost:4000
 echo "Publish? y/n"
@@ -75,7 +79,7 @@ GIF=$(./tweet.sh upload $GIF_NAME | jq -r .media_id_string)
 
 # post on insta (?)
 # https://www.npmjs.com/package/ig-upload
-ig-upload login
-echo "ig text:"
-read IG
-ig-upload $MP4_NAME $IG
+# ig-upload login
+# echo "ig text:"
+# read IG
+# ig-upload $MP4_NAME $IG
