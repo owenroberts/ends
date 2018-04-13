@@ -16,6 +16,9 @@ mkdir -p social/$CAT
 
 # move json anim file from downloads to current project folder d
 mv ~/Downloads/$PART.json assets/$CAT/$PART.json
+W=($(jq -r '.w' assets/$CAT/$PART.json))
+H=($(jq -r '.h' assets/$CAT/$PART.json))
+BG=($(jq -r '.bg' assets/$CAT/$PART.json))
 
 HTML="_posts/$CAT/$DATE-$CAT-$PART.html"
 
@@ -35,6 +38,9 @@ categories: $CAT
 <canvas 
 	id="lines" 
 	data-src="{{ site.url }}{{ site.baseurl }}/assets/{{ page.categories.first }}/$PART.json"
+	width="$W"
+	height="$H"
+	style="background-color:#$BG"
 ></canvas>
 {% include post_script.html %}
 EOF
