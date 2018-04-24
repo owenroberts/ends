@@ -6,6 +6,10 @@ echo "Part:"
 read PART
 echo "Title":
 read TITLE
+echo "Caption (optional)"
+read CAPTION
+P="${CAPTION//-/<br><br>}"
+echo $P
 
 DATE=`date +%Y-%m-%d`
 
@@ -42,6 +46,7 @@ categories: $CAT
 	height="$H"
 	style="background-color:#$BG"
 ></canvas>
+<p id="caption">$P</p>
 {% include post_script.html %}
 EOF
 fi
