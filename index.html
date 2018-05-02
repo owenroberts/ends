@@ -2,7 +2,6 @@
 layout: main
 title: home
 ---
-
 {% for post in site.posts limit:1 %}
 	<p>
 		latest drawing: <a href="{{ site.url }}{{ site.posts.first.url }}">{{site.posts.first.title}} part {{ site.posts.first.part }}</a>
@@ -18,5 +17,5 @@ title: home
   	{% endfor %}
   	. <a href="{{site.url}}/story_lines.html">story lines</a>
   	</p>
-	{{ content }}
+	{{ post.content }}
 {% endfor %}
