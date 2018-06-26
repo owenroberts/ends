@@ -6,6 +6,10 @@ body {
 	font-size: 12px;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
+
+	/*
+	background: linear-gradient(135deg, #f9f3c0 0%,#a1cee0 27%,#f9eafc 59%,#7db9e8 100%);
+	*/
 }
 
 #ends {

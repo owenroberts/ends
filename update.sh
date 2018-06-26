@@ -63,7 +63,10 @@ if [ "$PUBLISH" = "y" ] ; then
    	git push origin master
 else
     exit
+    # if already posted but need to make media just to yes
 fi
+
+# update without update.sh worked by not sure why ... is it just time?
 
 GIF_NAME=social/$CAT/$CAT-$DATE-part-$PART.gif
 MP4_NAME=social/$CAT/$CAT-$DATE-part-$PART.mp4
