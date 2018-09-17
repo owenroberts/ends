@@ -1,9 +1,9 @@
-<script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}/lines/lib/jquery.min.js"></script>
-<script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}/lines/lib/cool/cool.js"></script>
-<script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}/lines/play/play.js"></script>
+<script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}lines/lib/cool/cool.js"></script>
+<script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}lines/play/play.js"></script>
 
 <script type="text/javascript">
 	window.addEventListener('load', function() {
-		const p = new LinesPlayer(document.getElementById("ends"), "{{ site.url }}{{ site.baseurl }}/lines_draw.json");
+		const anim = Math.random() > 0.5 ? "lines_anim.json" : "lines_draw.json"
+		const p = new LinesPlayer(document.getElementById("ends"), "{{ site.url }}{{ site.baseurl }}/" + anim, 10);
 	});
 </script>
