@@ -68,32 +68,15 @@ fi
 
 # update without update.sh worked by not sure why ... is it just time?
 
-GIF_NAME=social/$CAT/$CAT-$DATE-part-$PART.gif
 MP4_NAME=social/$CAT/$CAT-$DATE-part-$PART.mp4
 
-echo "making gif"
-convert -delay 10 -loop 0 ~/Downloads/$PART-*.png $GIF_NAME
-
-# scale problem .... 
 echo "making mp4"
-echo "mp4 width:"
-read WIDTH
-# try square video ... 
-# ffmpeg -i social/fart/fart-2018-03-06.mp4 -filter:v "crop=512:512:128:0" -c:a copy social/fart/fart-2018-03-06_half.mp4
+ffmpeg -framerate 10 -pattern_type glob -i ~/Downloads/$PART"-*.png" -c:v libx264 -pix_fmt yuv420p $MP4_NAME
 
-ffmpeg -ignore_loop 0 -i $GIF_NAME -c:v libx264 -pix_fmt yuv420p -crf 4 -b:v 300K -vf scale=$WIDTH:-1 -t 4 -movflags +faststart $MP4_NAME
+open social/$CAT/
 
-echo "posting on twitter" # uses tweet.sh
-echo "tweet text:"
-read TWEET
-GIF=$(./tweet.sh upload $GIF_NAME | jq -r .media_id_string)
-./tweet.sh tw -m $GIF $TWEET http://lines.owen.cool/$CAT/`date +%Y`/`date +%m`/`date +%d`/$CAT-$PART.html
-
-# remove downloads ? 
-
-# post on insta (?)
-# https://www.npmjs.com/package/ig-upload
-# ig-upload login
-# echo "ig text:"
-# read IG
-# ig-upload $MP4_NAME $IG
+# echo "posting on twitter" # uses tweet.sh
+# echo "tweet text:"
+# read TWEET
+# POST=$(./tweet.sh upload $MP4_NAME | jq -r .media_id_string)
+# ./tweet.sh tw -m $POST $TWEET http://lines.owen.cool/$CAT/`date +%Y`/`date +%m`/`date +%d`/$CAT-$PART.html
