@@ -27,7 +27,7 @@ class: storylines
 	{% for post in sorted_posts %}
 		{%if post.categories contains category[0]%}
 		<div>
-			<span class="title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }} part {{ post.part }}</a></span>
+			<span class="title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }} {{ post.part }}</a></span>
 			<span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
 		</div>
 		{%endif%}

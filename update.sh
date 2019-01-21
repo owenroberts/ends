@@ -24,7 +24,9 @@ W=($(jq -r '.w' assets/$CAT/$PART.json))
 H=($(jq -r '.h' assets/$CAT/$PART.json))
 BG=($(jq -r '.bg' assets/$CAT/$PART.json))
 
-HTML="_posts/$CAT/$DATE-$CAT-$PART.html"
+HTML="_posts/$CAT/$DATE-$TITLE-$PART.html"
+
+# if there's no part ?
 
 if [ -f $HTML ]; then
 	echo "$HTML found"
@@ -74,6 +76,8 @@ echo "making mp4"
 ffmpeg -framerate 10 -pattern_type glob -i ~/Downloads/$PART"-*.png" -c:v libx264 -pix_fmt yuv420p $MP4_NAME
 
 open social/$CAT/
+
+rm ~/Downloads/$PART-*.png
 
 # echo "posting on twitter" # uses tweet.sh
 # echo "tweet text:"

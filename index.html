@@ -4,7 +4,7 @@ title: lines by owen ribbit
 ---
 {% for post in site.posts limit:1 %}
 	<p>
-		latest drawing: <a href="{{ site.url }}{{ site.posts.first.url }}">{{site.posts.first.title}} part {{ site.posts.first.part }}</a>
+		latest drawing: <a href="{{ site.url }}{{ site.posts.first.url }}">{{site.posts.first.title}} {{ site.posts.first.part }}</a>
 	</p>
 	<p>
 	{% if post.previous.url %}
