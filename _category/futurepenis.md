@@ -1,4 +1,4 @@
 ---
 tag: futurepenis
-permalink: "/category/futurepenis"
+permalink: "/category/futurepenis/"
 ---

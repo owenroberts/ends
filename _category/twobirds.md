@@ -1,4 +1,4 @@
 ---
 tag: twobirds
-permalink: "/category/twobirds"
+permalink: "/category/twobirds/"
 ---

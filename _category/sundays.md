@@ -1,4 +1,4 @@
 ---
 tag: sundays
-permalink: "/category/sundays"
+permalink: "/category/sundays/"
 ---
