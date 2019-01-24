@@ -2,8 +2,7 @@ body {
 	background-color: #3a3a3a;
 	color: white;
 	text-align: center;
-	font-family: monaco;
-	font-size: 12px;
+	font-family: menlo, monaco, monospace;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 
@@ -38,8 +37,22 @@ p#caption {
 
 #content.storylines {
 	width: 100%;
-	max-width: 640px;
+	max-width: 1200px;
 	margin: 0 auto;
-	column-count: 2;
-	text-align: left;
 }
+
+.date { text-transform: lowercase; }
+
+@media (max-width: 720px) {
+	#stories { column-count: 1; }
+}
+
+@media (min-width: 721px) {
+	#stories { column-count: 2; }
+}
+
+@media (min-width: 1200px) {
+	#stories { column-count: 3; }
+}
+
+

@@ -1,0 +1,31 @@
+---
+layout: main
+title: category
+---
+
+<div class="category">
+	<p>story line: 
+    {% assign cat =  page.tag | replace:'-', ' ' %}
+	{% if cat == "fart" %}
+		fart comics
+	{% elsif cat == "futurepenis" %}
+		the future penis
+	{% elsif cat == "twobirds" %}
+		two birds
+	{% elsif cat == "birds" %}
+		bird breakfast
+	{% else %}
+		{{ cat }}
+	{% endif %}
+	</p>
+
+    {% for post in site.categories[page.tag] %}
+        <div id="content">
+			<span class="title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }} {{ post.part }}</a></span>
+			<span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
+		</div>
+    {% endfor %}
+    <p><a href="{{site.url}}/story_lines.html">story lines</a></p>
+</div>
+
+<!-- category -->

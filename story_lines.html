@@ -8,29 +8,32 @@ class: storylines
 
 {% assign categories = site.categories | sort %}
 
-{% for category in categories %}
-	<a name="{{ category[0] }}"></a>
-	{% assign cat =  category[0] | replace:'-', ' ' %}
-	{% if cat == "fart" %}
-		<p>fart comics</p>
-	{% elsif cat == "futurepenis" %}
-		<p>the future penis</p>
-	{% elsif cat == "twobirds" %}
-		<p>two birds</p>
-	{% elsif cat == "birds" %}
-		<p>bird breakfast</p>
-	{% else %}
-		<p>{{ cat }}</p>
-	{% endif %}
+<div id="stories">
+	{% for category in categories %}
+	<div class="story">
+		<a name="{{ category[0] }}"></a>
+		{% assign cat =  category[0] | replace:'-', ' ' %}
+		{% if cat == "fart" %}
+			<p><a href="/category/fart/">fart comics</a></p>
+		{% elsif cat == "futurepenis" %}
+			<p><a href="/category/futurepenis/">the future penis</a></p>
+		{% elsif cat == "twobirds" %}
+			<p><a href="/category/twobirds/">two birds</a></p>
+		{% elsif cat == "birds" %}
+			<p><a href="/category/birds/">bird breakfast</a></p>
+		{% else %}
+			<p><a href="/category/{{ cat }}/">{{ cat }}</a></p>
+		{% endif %}
 
-	{% assign sorted_posts = site.posts | sort: 'date' | reverse %}
-	{% for post in sorted_posts %}
-		{%if post.categories contains category[0]%}
-		<div>
-			<span class="title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }} {{ post.part }}</a></span>
-			<span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
-		</div>
-		{%endif%}
+		{% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+		{% for post in sorted_posts %}
+			{%if post.categories contains category[0]%}
+			<div>
+				<span class="title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }} {{ post.part }}</a></span>
+				<span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
+			</div>
+			{%endif%}
+		{% endfor %}
+	</div>
 	{% endfor %}
-
-{% endfor %}
+</div>

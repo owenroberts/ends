@@ -5,10 +5,12 @@ title: lines by owen ribbit
 {% for post in site.posts limit:1 %}
 	<p>
 		latest drawing: <a href="{{ site.url }}{{ site.posts.first.url }}">{{site.posts.first.title}} {{ site.posts.first.part }}</a>
+		<!-- .
+		in <a href="{{ site.url }}/category/{{ site.posts.first.categories[0] }}">{{ site.posts.first.categories[0] }}</a> -->
 	</p>
 	<p>
 	{% if post.previous.url %}
-		<a href="{{ site.url }}{{ post.previous.url }}">previous drawing</a>
+		<a href="{{ site.url }}{{ post.previous.url }}">previous</a>
 	{% endif %}
 	{% for cat in site.categories[post.categories.first] %}
 		{% if cat.part == 1 %}

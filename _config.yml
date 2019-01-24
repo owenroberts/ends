@@ -1,5 +1,15 @@
-description: every day ends site
+description: lines
 baseurl: /
+collections:
+  category:
+    output: true
+defaults:
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
 exclude:
   - hotdogs/
   - doc/

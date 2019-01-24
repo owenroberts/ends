@@ -27,6 +27,7 @@ BG=($(jq -r '.bg' assets/$CAT/$PART.json))
 HTML="_posts/$CAT/$DATE-$TITLE-$PART.html"
 
 # if there's no part ?
+echo $HTML
 
 if [ -f $HTML ]; then
 	echo "$HTML found"
