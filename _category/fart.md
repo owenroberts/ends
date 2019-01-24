@@ -1,4 +1,4 @@
 ---
 tag: fart
-permalink: "/category/fart/"
+permalink: "/category/fart"
 ---

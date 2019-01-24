@@ -1,4 +1,4 @@
 ---
 tag: birds
-permalink: "/category/birds/"
+permalink: "/category/birds"
 ---

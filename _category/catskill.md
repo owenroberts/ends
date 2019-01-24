@@ -1,4 +1,4 @@
 ---
 tag: catskill
-permalink: "/category/catskill/"
+permalink: "/category/catskill"
 ---
